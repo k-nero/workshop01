@@ -38,7 +38,6 @@ public class AuthFilter implements Filter {
         if (user == null) {
             res.sendRedirect(req.getContextPath() + "/login");
         } else {
-            // Check if user is staff (role 1: manager, 2: staff)
             int role = user.getRole();
             if (role != 1 && role != 2) {
                 res.sendRedirect(req.getContextPath() + "/home");
